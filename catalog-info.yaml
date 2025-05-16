@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ryrw1frzb-python-gitops
+  description: This is GitOps manifest for ryrw1frzb-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ryrw1frzb-python
+    backstage.io/kubernetes-id: ryrw1frzb-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ryrw1frzb-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ryrw1frzb-python
